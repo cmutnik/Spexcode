@@ -8,7 +8,7 @@ import numpy as np
 from glob import glob
 import os
 
-dir_path = u'/Users/corey/work/astro/finished_with_fixed_names'
+dir_path = u'/Users/cmutnik/work/astro/finished_with_fixed_names'
 globpath = os.path.join(dir_path, '*.fits')
 filelist = glob(globpath)
 filelist.sort()
@@ -26,8 +26,10 @@ for j in range(0, len(filelist)):
     y_pos = 1 + j
 
 
-    xmax = 2.4195919036865234 # = np.max(spectra[0])
-    xmin = 0.80251264572143555 # = np.min(spectra[0])
+    #xmax = 2.4195919036865234 # = np.max(spectra[0])
+    #xmin = 0.80251264572143555 # = np.min(spectra[0])
+    xmin = 0.7
+    xmax = 2.55
     to_plot_regions = np.arange(0.0, 3.0 , 0.1)
 
 
