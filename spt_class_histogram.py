@@ -3,6 +3,7 @@
 
 from astropy.io import ascii
 import matplotlib.pyplot as plt
+import numpy as np
 
 # open data
 spt_data = ascii.read('rebinned.txt')
