@@ -1,3 +1,4 @@
+#!/cmutnik/bin/python
 # Python script to generate histogram of observed stars (optical) luminosity classes 
 # Corey Mutnik 3/14/16
 

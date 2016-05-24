@@ -1,6 +1,8 @@
+#!/cmutnik/bin/python
 # code3 mod of scripty_ intended to plot spectra of each star seperately
 # Corey Mutnik
-# 9/11/15-9/30/15 
+# 9/11/15-9/30/15
+# mod: 5/23/16 
 
 from astropy.io import fits
 import matplotlib.pyplot as plt
@@ -13,42 +15,34 @@ globpath = os.path.join(dir_path, '*.fits')
 filelist = glob(globpath)
 filelist.sort()
 
-for j in range(0, len(filelist)):
+for j in range(len(filelist)):
     spectra = fits.getdata(filelist[j])
-    norm_wave = np.where(abs(spectra[0] - 1.10) == min(abs(spectra[0]-1.10)))[0][0]
+    norm_wave = np.where(abs(spectra[0]-2.20) == min(abs(spectra[0]-2.20)))[0][0]
     norm_den = (float)((spectra[0][norm_wave] * spectra[1][norm_wave])**(-1))
     norm_flux = []
     for i in range(0, len(spectra[0])):
-        norm_flux.append(spectra[0][i] * spectra[1][i] * norm_den + j)
+        norm_flux.append(spectra[0][i] * spectra[1][i] * norm_den)
 
     file_name = os.path.basename(filelist[j])[:-5] #[:-5] prints file_name removing '.fits' from each
-    #print file_name
-    y_pos = 1 + j
 
+    #xmax = np.max(spectra[0])
+    #xmin = np.min(spectra[0])
+    xmin = 0.7
+    xmax = 2.55
 
-    xmax = 2.4195919036865234 # = np.max(spectra[0])
-    xmin = 0.80251264572143555 # = np.min(spectra[0])
-    to_plot_regions = np.arange(0.0, 3.0 , 0.1)
+    figure_name = file_name + '.pdf'
 
-
-    figure_name = file_name + '_2.png'
-
-    '''
-    rayner_title = file_name + '(SPT class)'
-    plt.title(rayner_title)
-    plt.xlim(0.8, 2.5) # what rayner used
-    '''
-#    plt.clf() # clears graph so they dont plot over eachother
+    plt.clf() # clears graph so they dont plot over eachother
     plt.plot(spectra[0], norm_flux, lw=0.5, color='black')
-    plt.text(2, y_pos, file_name)
 
     plt.title(file_name)
     plt.xlabel('Wavelength $\mu$m')
-    plt.ylabel('$\lambda f_\lambda / \lambda f_\lambda (1.1\mu m) + $ constant')
-    plt.ylim(0, 55)
+    #plt.ylabel('f$_\lambda$ $(10^{-10}$ $W$ $m^{-2} \mu m^{-1})$')#Rayner flux units
+    plt.ylabel('f$_\lambda$ $(ergs$ $s^{-1} cm^{-2} \AA^{-1})$')
+
+    #plt.ylim(0, 5)
     #plt.xlim(0.58, 2.6)
     #plt.xlim(np.min(spectra[0]), np.max(spectra[0]))
-   # plt.ylim(np.min(norm_flux), np.max(norm_flux)) #-------------------added this line-----------------------
     plt.xlim(xmin, xmax) # dont wanna use xmin/max since it will differ for spex vs uspex data
     #plt.grid(True)
 
@@ -61,7 +55,5 @@ for j in range(0, len(filelist)):
     plt.axvspan(1.35, 1.415, facecolor='gray', alpha=0.5, lw=0)
     plt.axvspan(1.8, 1.91, facecolor='gray', alpha=0.5, lw=0)
 
-
-plt.savefig('all_on_one_no_color.png')
-#plt.savefig(figure_name)
-#plt.show()
+    plt.savefig(figure_name)
+    #plt.show()

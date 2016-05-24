@@ -50,7 +50,26 @@ if len(uwavelength) == len(uflux):
 else:
     print 'wavelength and flux arrays are not equal in length'
 '''
+'''
+#--------------------------------------------------------------------
+# division between new and old spex (uspex/spex)
+# len(norm_flux) chosen since it spans less range than unorm_flux
 
+sub_norm_flux = []
+unorm_flux_noshift = []
+for i in range(0, len(norm_flux)):
+    unorm_flux_noshift.append(uwavelength[i] * uflux[i] * unorm_den)
+    sub_norm_flux.append(abs(norm_flux[i] - unorm_flux_noshift[i]))
+div_norm_flux = []
+for i in range(0, len(norm_flux)):
+    div_norm_flux.append(sub_norm_flux[i] / unorm_flux_noshift[i])
+
+
+
+# try making unormflux and normflux using the same unorm_den
+#then subrtacting or dividing them
+#-----------------------------------------------------------------   
+'''
 
 # for overlapping spectra graph
 unorm_flux_no_shift = []

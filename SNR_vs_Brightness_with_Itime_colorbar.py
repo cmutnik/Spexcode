@@ -1,3 +1,4 @@
+#!/cmutnik/bin/python
 # to plot S/N vs Integration Time by reading in csv
 
 from astropy.io import ascii
@@ -24,8 +25,8 @@ plt.scatter(J_mag, SNR, c=np.array(exptime), alpha=0.4)#, s=area_)
 plt.colorbar().set_label('Integration Time')
 plt.xlabel('Brightness (Jmag)')
 plt.ylabel('SNR')
-plt.show()
-#plt.savefig('snr_brightness2.png')
+#plt.show()
+plt.savefig('snr_brightness2.pdf')
 
 
 # FLIP COLORBAR AND X-AXIS
@@ -35,5 +36,5 @@ plt.scatter(exptime, SNR, c=np.array(J_mag), alpha=0.4)
 plt.colorbar().set_label('Brightness (Jmag)')
 plt.xlabel('Integration Time')
 plt.ylabel('SNR')
-plt.show()
-#plt.savefig('snr_exptime2.png')
+#plt.show()
+plt.savefig('snr_exptime2.pdf')
