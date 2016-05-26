@@ -18,9 +18,13 @@ exptime = tabdat['col9']
 
 
 # AS SINGLE PLOT
-plt.clf()
-area_ = np.pi * (0.002 * np.array(J_mag))**2
+fig = plt.figure()
+# to adjust margin on left side of plot
+fig.subplots_adjust(left=0.125)
+#fig.subplots_adjust(left=0.1, wspace=0.6)
 
+plt.clf()
+#area_ = np.pi * (0.002 * np.array(J_mag))**2
 plt.scatter(J_mag, SNR, c=np.array(exptime), alpha=0.4)#, s=area_)
 plt.colorbar().set_label('Integration Time')
 plt.xlabel('Brightness (Jmag)')
@@ -31,7 +35,6 @@ plt.savefig('snr_brightness2.pdf')
 
 # FLIP COLORBAR AND X-AXIS
 plt.clf()
-
 plt.scatter(exptime, SNR, c=np.array(J_mag), alpha=0.4)
 plt.colorbar().set_label('Brightness (Jmag)')
 plt.xlabel('Integration Time')
