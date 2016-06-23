@@ -822,12 +822,17 @@ def Al_I_EW(inwave,influx):
 def Na_I_1tac14_EW(inwave,influx):
     global EW_nai, variance_nai
     # Na i (1.14 \mum)
-    # Feature limits: 1.120-1.160
+    # Published Feature limits: 1.120-1.160
     low_lim,high_lim = 1.120,1.160
     # First continuum level: 1.125-1.130
     fc1,fc2 = 1.125,1.130
     #Second continuum level: 1.150-1.160
     sc1,sc2 = 1.150,1.160
+
+    ##
+    # Corrected Feature Limits
+    ##
+    FL1, FL2 = 1.137,1.1428
 
     # define window of region (was used for plotting)
     #window = (low_lim <= inwave) & (high_lim >= inwave)
@@ -852,7 +857,7 @@ def Na_I_1tac14_EW(inwave,influx):
     #limits_continuum, = plt.plot(wave4linfit, lifit_plot, label='Linear Fit', color='red')
     
     # only use region between first and second continuum regions
-    feature_within_limits = (fc2 <= inwave) & (sc1 >= inwave)
+    feature_within_limits = (FL1 <= inwave) & (FL2 >= inwave)
     wave_within_limits = inwave[feature_within_limits]
     flux_within_limits = influx[feature_within_limits]
 
@@ -944,7 +949,7 @@ filelist = glob(globpath)
 filelist.sort()
 
 # set file to write EW values to
-outfile = open('EW_of_rayner_stars.txt', 'w')
+outfile = open('EW_of_rayner_stars_fixed_NaI_1tac14.txt', 'w')
 
 # write header to file, for colnames
 #outfile.write('#standard_file, EW_caii, EW_nai, EW_nai_2tac2, EW_ali, EW_mgi_1tac5, EW_mgi_1tac7, variance_mgi_1tac7\n')
