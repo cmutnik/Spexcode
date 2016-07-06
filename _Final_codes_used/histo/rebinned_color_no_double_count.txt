@@ -1,0 +1,8 @@
+class	binned	color
+B		10		lightskyblue
+A		8		white
+F		8		palegoldenrod
+G		8		gold
+K		8		orange
+M		4		red
+#S		1		maroon
