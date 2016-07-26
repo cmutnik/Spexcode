@@ -6,6 +6,7 @@
 #   7/13/16 - to only include Yng dwarfs
 #   7/20/16 - formatting
 #   7/21/16 - changed MgI ylim and added symbols to legend
+#   7/25/16 - $\mu m$ --> $\mu$m
 
 from astropy.io import ascii
 import matplotlib.pyplot as plt
@@ -649,12 +650,12 @@ def published_EW_values():
 
 		# label features
 		#ax[0,0].annotate('Test', xy=(1, 0), xycoords='axes fraction', fontsize=16,xytext=(-5, 5), textcoords='offset points',ha='right', va='bottom')
-		ax[0,0].annotate('Ca II (0.866 $\mu m$)', xy=(2, 6))
-		ax[0,1].annotate('Na I (1.14 $\mu m$)', xy=(2, 10))
-		ax[1,0].annotate('Al I (1.31 $\mu m$)', xy=(2, 3))
-		ax[1,1].annotate('Mg I (1.49 $\mu m$)', xy=(2, 3))
-		ax[2,0].annotate('Mg I (1.71 $\mu m$)', xy=(2, 4))
-		ax[2,1].annotate('Na I (2.21 $\mu m$)', xy=(2, 6.5))
+		ax[0,0].annotate('Ca II (0.866 $\mu$m)', xy=(2, 6))
+		ax[0,1].annotate('Na I (1.14 $\mu$m)', xy=(2, 10))
+		ax[1,0].annotate('Al I (1.31 $\mu$m)', xy=(2, 3))
+		ax[1,1].annotate('Mg I (1.49 $\mu$m)', xy=(2, 3))
+		ax[2,0].annotate('Mg I (1.71 $\mu$m)', xy=(2, 4))
+		ax[2,1].annotate('Na I (2.21 $\mu$m)', xy=(2, 6.5))
 
 		# turn off x-axis labels
 		#ax[0,0].axes.get_xaxis().set_visible(False)
@@ -723,12 +724,12 @@ def published_EW_values():
 		ax[2,1].set_ylim([-2.2,4.9])
 
 		# label features
-		ax[0,0].annotate('Ca II (0.866 $\mu m$)', xy=(2, (5.*4.4/5.9)))
-		ax[0,1].annotate('Na I (1.14 $\mu m$)', xy=(2, 5)) # normalize to this subplot...xy=(2, (5*ymax/5.9))
-		ax[1,0].annotate('Al I (1.31 $\mu m$)', xy=(2, (5.*2.5/5.9)))
-		ax[1,1].annotate('Mg I (1.49 $\mu m$)', xy=(2, (5.*2.2/5.9)))
-		ax[2,0].annotate('Mg I (1.71 $\mu m$)', xy=(2, (5.*2.9/5.9)))
-		ax[2,1].annotate('Na I (2.21 $\mu m$)', xy=(2, (5.*4.9/5.9)))
+		ax[0,0].annotate('Ca II (0.866 $\mu$m)', xy=(2, (5.*4.4/5.9)))
+		ax[0,1].annotate('Na I (1.14 $\mu$m)', xy=(2, 5)) # normalize to this subplot...xy=(2, (5*ymax/5.9))
+		ax[1,0].annotate('Al I (1.31 $\mu$m)', xy=(2, (5.*2.5/5.9)))
+		ax[1,1].annotate('Mg I (1.49 $\mu$m)', xy=(2, (5.*2.2/5.9)))
+		ax[2,0].annotate('Mg I (1.71 $\mu$m)', xy=(2, (5.*2.9/5.9)))
+		ax[2,1].annotate('Na I (2.21 $\mu$m)', xy=(2, (5.*4.9/5.9)))
 
 		# turn off x-axis labels
 		#ax[0,0].axes.get_xaxis().set_visible(False)
@@ -1148,12 +1149,12 @@ def obs_calcedR09_6subplots_overlay_mediumPS_WORKS():
 	"""
 	norm_text = (15.9-13.75)/(15.9+3.4)
 	# label features
-	ax[0,0].annotate( 'Ca II (0.866 $\mu m$)', xy=(2, (7.9 - (7.9+3.1)*norm_text)) )
-	ax[0,1].annotate( 'Na I (1.14 $\mu m$)', xy=(2, 13.75) ) # normalize to this subplot
-	ax[1,0].annotate( 'Al I (1.31 $\mu m$)', xy=(2, (3.6 - (3.6+1.2)*norm_text)) )
-	ax[1,1].annotate( 'Mg I (1.49 $\mu m$)', xy=(2, (3.3 - (3.3+3.9)*norm_text)) )
-	ax[2,0].annotate( 'Mg I (1.71 $\mu m$)', xy=(2, (4.2 - (4.2+1.4)*norm_text)) )
-	ax[2,1].annotate( 'Na I (2.21 $\mu m$)', xy=(2, (8.0 - (8.0+2.5)*norm_text)) )
+	ax[0,0].annotate( 'Ca II (0.866 $\mu$m)', xy=(2, (7.9 - (7.9+3.1)*norm_text)) )
+	ax[0,1].annotate( 'Na I (1.14 $\mu$m)', xy=(2, 13.75) ) # normalize to this subplot
+	ax[1,0].annotate( 'Al I (1.31 $\mu$m)', xy=(2, (3.6 - (3.6+1.2)*norm_text)) )
+	ax[1,1].annotate( 'Mg I (1.49 $\mu$m)', xy=(2, (3.3 - (3.3+3.9)*norm_text)) )
+	ax[2,0].annotate( 'Mg I (1.71 $\mu$m)', xy=(2, (4.2 - (4.2+1.4)*norm_text)) )
+	ax[2,1].annotate( 'Na I (2.21 $\mu$m)', xy=(2, (8.0 - (8.0+2.5)*norm_text)) )
 
 	# label by lum class
 	ax[0,1].annotate( 'Young Dwarfs', xy=(2, 11.75), color='black', size='medium' )#size='x-small'
@@ -1580,12 +1581,12 @@ def obs_calcedR09_6subplots_160721():
 
 	norm_text = (15.9-13.75)/(15.9+3.4)
 	# label features
-	ax[0,0].annotate( 'Ca II (0.866 $\mu m$)', xy=(2, (7.9 - (7.9+3.1)*norm_text)), weight=500 )
-	ax[0,1].annotate( 'Na I (1.14 $\mu m$)', xy=(2, 13.75), weight=500 ) # normalize to this subplot
-	ax[1,0].annotate( 'Al I (1.31 $\mu m$)', xy=(2, (3.6 - (3.6+1.2)*norm_text)), weight=500 )
-	ax[1,1].annotate( 'Mg I (1.49 $\mu m$)', xy=(2, (3.3 - (3.3+1.5)*norm_text)), weight=500 )
-	ax[2,0].annotate( 'Mg I (1.71 $\mu m$)', xy=(2, (4.2 - (4.2+1.4)*norm_text)), weight=500 )
-	ax[2,1].annotate( 'Na I (2.21 $\mu m$)', xy=(2, (8.0 - (8.0+2.5)*norm_text)), weight=500 )
+	ax[0,0].annotate( 'Ca II (0.866 $\mu$m)', xy=(2, (7.9 - (7.9+3.1)*norm_text)), weight=500 )
+	ax[0,1].annotate( 'Na I (1.14 $\mu$m)', xy=(2, 13.75), weight=500 ) # normalize to this subplot
+	ax[1,0].annotate( 'Al I (1.31 $\mu$m)', xy=(2, (3.6 - (3.6+1.2)*norm_text)), weight=500 )
+	ax[1,1].annotate( 'Mg I (1.49 $\mu$m)', xy=(2, (3.3 - (3.3+1.5)*norm_text)), weight=500 )
+	ax[2,0].annotate( 'Mg I (1.71 $\mu$m)', xy=(2, (4.2 - (4.2+1.4)*norm_text)), weight=500 )
+	ax[2,1].annotate( 'Na I (2.21 $\mu$m)', xy=(2, (8.0 - (8.0+2.5)*norm_text)), weight=500 )
 
 	# label by lum class
 	ax[0,1].annotate( 'Young Dwarfs', xy=(2, 12), color='black', size=13, weight=1000 )
@@ -1630,7 +1631,7 @@ def obs_calcedR09_6subplots_160721():
 
 
 	#plt.show()
-	plt.savefig('EW_obs_calcDwarfs_R09_mg1tac5_160721.png', bbox_inches='tight')
+	plt.savefig('EW_obs_calcDwarfs_R09_mg1tac5_160725.pdf', bbox_inches='tight')
 	#plt.savefig('annotate_plot_variations/EW_obs_calcDwarfs_R09_err_ps13_spacing1tac5uneven_xlabel_hspace_bottomtac075_160719.png')
 
 
