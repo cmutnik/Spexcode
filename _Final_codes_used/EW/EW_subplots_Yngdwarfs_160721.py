@@ -1588,12 +1588,34 @@ def obs_calcedR09_6subplots_160721():
 	ax[2,0].annotate( 'Mg I (1.71 $\mu$m)', xy=(2, (4.2 - (4.2+1.4)*norm_text)), weight=500 )
 	ax[2,1].annotate( 'Na I (2.21 $\mu$m)', xy=(2, (8.0 - (8.0+2.5)*norm_text)), weight=500 )
 
+	'''#160721
+	###
+	# Legend w/o shapes
+	###
 	# label by lum class
 	ax[0,1].annotate( 'Young Dwarfs', xy=(2, 12), color='black', size=13, weight=1000 )
 	ax[0,1].annotate( 'Old Dwarfs', xy=(2, 10.5), color='red', size=13, weight=1000 )
 	ax[0,1].annotate( 'Old Giants', xy=(2, 9), color='orange', size=13, weight=1000 )
 	ax[0,1].annotate( 'Old Supergiants', xy=(2, 7.5), color='purple', size=13, weight=1000 )
+	'''
+
+	##
+	# Legend w/ shapes
+	##
+	# label by lum class
+	ax[0,1].annotate( 'Young Dwarfs', xy=(4.1, 12), color='black', size=13, weight=1000 )
+	ax[0,1].annotate( 'Old Dwarfs', xy=(4.2, 10.5), color='red', size=13, weight=1000 )
+	ax[0,1].annotate( 'Old Giants', xy=(4.3, 9), color='orange', size=13, weight=1000 )
+	ax[0,1].annotate( 'Old Supergiants', xy=(4.4, 7.5), color='purple', size=13, weight=1000 )
+
+	# Add fake data points for legend
+	#fakex,fakey = [2,2,2,2], [12,10.5,9,7.5]
+	fakex, fakey, mrks, mrsize, fakecol = [3,3,3,3], [12.4,10.9,9.4,7.9], ['.','8','v','^'], [17,9,9,9], ['black','red','orange','purple']
+	for kk in range(len(fakex)):
+		ax[0,1].errorbar(fakex[kk],fakey[kk], marker=mrks[kk], ms=mrsize[kk], color=fakecol[kk],mec=fakecol[kk])
+
 	
+
 	# Create fake data points to go next to labels
 	#ax[0,1].scatter(mapped_val,nai, color='black')	
 
