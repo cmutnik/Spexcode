@@ -1609,8 +1609,8 @@ def obs_calcedR09_6subplots_160721():
 	ax[0,1].annotate( 'Old Supergiants', xy=(4.4, 7.5), color='purple', size=13, weight=1000 )
 
 	# Add fake data points for legend
-	#fakex,fakey = [2,2,2,2], [12,10.5,9,7.5]
-	fakex, fakey, mrks, mrsize, fakecol = [3,3,3,3], [12.4,10.9,9.4,7.9], ['.','8','v','^'], [17,9,9,9], ['black','red','orange','purple']
+	#fakex,fakey = [3,3,3,3], [12.4,10.9,9.4,7.9]
+	fakex, fakey, mrks, mrsize, fakecol = [3,3,3,3], [12.4,10.9,9.375,7.95], ['.','8','v','^'], [17,9,9,9], ['black','red','orange','purple']
 	for kk in range(len(fakex)):
 		ax[0,1].errorbar(fakex[kk],fakey[kk], marker=mrks[kk], ms=mrsize[kk], color=fakecol[kk],mec=fakecol[kk])
 
@@ -1653,7 +1653,7 @@ def obs_calcedR09_6subplots_160721():
 
 
 	#plt.show()
-	plt.savefig('EW_obs_calcDwarfs_R09_mg1tac5_160725.pdf', bbox_inches='tight')
+	plt.savefig('EW_obs_calcDwarfs_R09_mg1tac5_160725.png', bbox_inches='tight')
 	#plt.savefig('annotate_plot_variations/EW_obs_calcDwarfs_R09_err_ps13_spacing1tac5uneven_xlabel_hspace_bottomtac075_160719.png')
 
 
